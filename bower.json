@@ -1,0 +1,34 @@
+{
+  "name": "purescript-creditcard-validation",
+  "homepage": "https://github.com/ersocon/purescript-creditcard-validation",
+  "authors": [
+    "Alexej Bondarenko <alexej.bondarenko@ersocon.net>"
+  ],
+  "description": "Purescript utility library for credit card validation",
+  "main": "",
+  "keywords": [
+    "purescript",
+    "creditcard",
+    "payment",
+    "validation"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "purescript-strings": "^4.0.0",
+    "purescript-maybe": "^4.0.0",
+    "purescript-prelude": "^4.1.0",
+    "purescript-effect": "^2.0.0"
+  },
+  "devDependencies": {
+    "purescript-spec": "^3.0.0"
+  }
+}
