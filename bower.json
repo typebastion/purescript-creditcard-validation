@@ -6,6 +6,10 @@
   ],
   "description": "Purescript utility library for credit card validation",
   "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ersocon/purescript-creditcard-validation.git"
+  },
   "keywords": [
     "purescript",
     "creditcard",
