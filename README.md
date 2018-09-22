@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/ersocon/purescript-creditcard-validation.svg?branch=master)](https://travis-ci.org/ersocon/purescript-creditcard-validation)
 
+[![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://img.shields.io/badge/Version-1.0.0-green.svg)
+
 Purescript utility library to check for valid credit card numbers
 
 ## Installation
