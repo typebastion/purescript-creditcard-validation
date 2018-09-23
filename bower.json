@@ -31,7 +31,6 @@
     "purescript-maybe": "^4.0.0",
     "purescript-prelude": "^4.1.0",
     "purescript-effect": "^2.0.0",
-    "purescript-lists": "^5.3.0",
     "purescript-foldable-traversable": "^4.0.1"
   },
   "devDependencies": {

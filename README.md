@@ -1,5 +1,6 @@
 # purescript-creditcard-validation
 
+[![Pursuit version](https://pursuit.purescript.org/packages/purescript-creditcard-validation/badge)](https://pursuit.purescript.org/packages/purescript-creditcard-validation)
 [![Build Status](https://travis-ci.org/ersocon/purescript-creditcard-validation.svg?branch=master)](https://travis-ci.org/ersocon/purescript-creditcard-validation)
 
 Purescript utility library to check for validity of credit card numbers
