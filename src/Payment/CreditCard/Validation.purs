@@ -1,4 +1,6 @@
-module Payment.CreditCard.Validation where
+module Payment.CreditCard.Validation 
+  (isValidInput, isValidArray)
+  where
   
 import Prelude
 
