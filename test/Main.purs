@@ -8,6 +8,7 @@ import Test.Spec (describe, it)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
 import Test.Spec.Runner (run)
+import Data.Traversable (traverse_)
 
 import Data.Array (reverse)
 
@@ -17,26 +18,29 @@ main :: Effect Unit
 main = run [consoleReporter] do
   describe "Payment.CreditCard.Validation" do
     describe "isValidInput" do
-      --it "should validate valid VISA cards" do
-      --  map (\card -> (PCV.isValidInput card) `shouldEqual` true) validVisaCards
+      it "should validate valid VISA cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validVisaCard
 
-      it "Should validate valid credit card number 4916864428336303" do
-        (PCV.isValidInput "4916864428336303") `shouldEqual` true
+      it "should validate valid Mastercard cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validMastercard
 
-      it "Should validate valid credit card number 4485186432004102" do
-        (PCV.isValidInput "4485186432004102") `shouldEqual` true
+      it "should validate valid VISA Electron cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validVisaElectron
 
-      it "Should validate valid credit card number 5498671212144998" do
-        (PCV.isValidInput "5498671212144998") `shouldEqual` true
+      it "should validate valid Discover cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validDiscover
 
-      it "Should validate valid credit card number 4556737586899855" do
-        (PCV.isValidInput "4556737586899855") `shouldEqual` true
-        
-      it "Should validate invalid credit card numbers as invalid" do
-        (PCV.isValidInput "4716292509375979") `shouldEqual` false
+      it "should validate valid Maestro cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validMaestro
 
-      it "Should reject non digit inputs" do
-        (PCV.isValidInput "471629vv09375979") `shouldEqual` false
+      it "should validate valid AmericanExpress cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validAmericanExpress
+
+      it "should validate valid JCB cards" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` true) validJCB
+
+      it "Should mark invalid credit card numbers as invalid" do
+        traverse_ (\card -> (PCV.isValidInput card) `shouldEqual` false) invalidCreditCardNumbers  
 
       it "Should reject 0 input" do
         (PCV.isValidInput "0") `shouldEqual` false  
@@ -69,6 +73,7 @@ validCreditCardNumbers =
 validVisaCard :: Array String
 validVisaCard =
   [ "4539324182536314"
+  , "4539324182536314"
   , "4532046628477970"
   , "4532461822386178872"
   ]
@@ -131,6 +136,6 @@ validJCB =
 
 invalidCreditCardNumbers :: Array String
 invalidCreditCardNumbers =
-  [ "4716292509375979"
+  [ "35397397430792761"
   , "471629vv09375979"
   ]

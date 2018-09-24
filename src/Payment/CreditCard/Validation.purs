@@ -49,7 +49,7 @@ luhnNumbers input = luhnCorrection (doubleEachSecond input)
 
 luhnCheck :: Array Int -> Int -> Boolean
 luhnCheck input verificationNumber =
-  (luhnSum input) % (toNumber 10) == (toNumber (10 - verificationNumber))
+  (luhnSum input) % (toNumber 10) == (toNumber (10 - verificationNumber)) || (luhnSum input) % (toNumber 10) == (toNumber (0))
   where
     luhnSum :: Array Int -> Number
     luhnSum numbersArr = toNumber (sum (luhnNumbers numbersArr))
